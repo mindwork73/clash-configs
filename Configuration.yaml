@@ -1,0 +1,30 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+
+proxies:
+  - name: hy2-vds
+    type: hysteria2
+    server: 94.103.95.55
+    port: 8444
+    password: Pp8ZbKpF3X
+    auth: password
+    sni: your-domain.com
+    skip-cert-verify: true
+    up: 50 Mbps
+    down: 200 Mbps
+    obfs: salamander
+    obfs-password: q9D4mK8s
+    fast-open: true
+
+proxy-groups:
+  - name: AUTO
+    type: select
+    proxies:
+      - hy2-vds
+      - DIRECT
+
+rules:
+  - MATCH,AUTO
