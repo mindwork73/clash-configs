@@ -2,10 +2,10 @@ port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
-log-level: info
+log-level: debug
 
 proxies:
-  - name: hy2-vds
+  - name: hy2-vdsina
     type: hysteria2
     server: 94.103.95.55
     port: 8444
@@ -23,7 +23,7 @@ proxy-groups:
   - name: AUTO
     type: select
     proxies:
-      - hy2-vds
+      - hy2-vdsina
       - DIRECT
 
 rules:
